@@ -1,4 +1,4 @@
-package com.borebrian.statussaver.home
+package com.brighten.statussaver.home
 
 import android.Manifest
 import android.annotation.SuppressLint
@@ -22,13 +22,13 @@ import android.support.v7.widget.GridLayoutManager
 import android.view.MenuItem
 import android.view.View
 import android.widget.Toast
-import com.borebrian.statussaver.BuildConfig
-import com.borebrian.statussaver.R
-import com.borebrian.statussaver.utils.MyAlert
-import com.borebrian.statussaver.utils.MyProgress
-import com.borebrian.statussaver.utils.Utils
-import com.borebrian.statussaver.utils.Utils.Companion.WHATSAPP_STATUSES_LOCATION
-import com.borebrian.statussaver.utils.Utils.Companion.WHATSAPP_STATUSES_SAVED_LOCATION
+import com.brighten.statussaver.BuildConfig
+import com.brighten.statussaver.R
+import com.brighten.statussaver.utils.MyAlert
+import com.brighten.statussaver.utils.MyProgress
+import com.brighten.statussaver.utils.Utils
+import com.brighten.statussaver.utils.Utils.Companion.WHATSAPP_STATUSES_LOCATION
+import com.brighten.statussaver.utils.Utils.Companion.WHATSAPP_STATUSES_SAVED_LOCATION
 import com.google.android.gms.ads.*
 import com.google.android.gms.ads.reward.RewardedVideoAd
 import kotlinx.android.synthetic.main.activity_home.*
@@ -53,13 +53,13 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         }
         else{
             mInterstitialAd = InterstitialAd(this);
-            mInterstitialAd.setAdUnitId("ca-app-pub-3940256099942544/1033173712");
+            mInterstitialAd.setAdUnitId("ca-app-pub-5747999756430076/4516345803");
             mInterstitialAd.loadAd(AdRequest.Builder().build());
             mInterstitialAd.show()
         }
     }
 
-    private lateinit var progress:MyProgress
+    private lateinit var progress: MyProgress
     private companion object {
 
         const val EXTERNAL_STORAGE_PERMISSION_CODE: Int = 343
@@ -67,7 +67,7 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         private const val TYPE_IMAGE = 13
         private const val TYPE_SAVED = 15
 
-          class FetchFilesTask(activity:HomeActivity) : AsyncTask<Int, Int, ArrayList<File>>() {
+          class FetchFilesTask(activity: HomeActivity) : AsyncTask<Int, Int, ArrayList<File>>() {
 
               private val mRef: WeakReference<HomeActivity> = WeakReference(activity)
 
@@ -99,7 +99,7 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     }
 
 
-    private lateinit var statusAdapter:StatusAdapter
+    private lateinit var statusAdapter: StatusAdapter
     lateinit var mainHandler: Handler
     lateinit var context: Context
     lateinit var mAdView: AdView
@@ -121,7 +121,7 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
 
         mInterstitialAd = InterstitialAd(this);
-        mInterstitialAd.setAdUnitId("ca-app-pub-3940256099942544/1033173712")
+        mInterstitialAd.setAdUnitId("ca-app-pub-5747999756430076/4516345803")
         mInterstitialAd.loadAd(AdRequest.Builder().build());
         mInterstitialAd.setAdListener(object: AdListener() {
             override  fun onAdLoaded() {
@@ -173,7 +173,7 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
     fun showInterstitialAd() {
         mInterstitialAd = InterstitialAd(this);
-        mInterstitialAd.setAdUnitId("ca-app-pub-3940256099942544/1033173712")
+        mInterstitialAd.setAdUnitId("ca-app-pub-5747999756430076/4516345803")
         mInterstitialAd.loadAd(AdRequest.Builder().build());
         mInterstitialAd.setAdListener(object: AdListener() {
             override  fun onAdLoaded() {
@@ -185,7 +185,7 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         }
      fun  prepareAd() {
          mInterstitialAd = InterstitialAd(this);
-         mInterstitialAd.setAdUnitId("ca-app-pub-3940256099942544/1033173712")
+         mInterstitialAd.setAdUnitId("ca-app-pub-5747999756430076/4516345803")
          mInterstitialAd.loadAd(AdRequest.Builder().build())
          mInterstitialAd.show()
     }

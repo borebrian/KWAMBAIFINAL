@@ -1,4 +1,4 @@
-package com.borebrian.statussaver.image
+package com.brighten.statussaver.image
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,30 +7,24 @@ import android.support.v7.app.AppCompatActivity
 import android.view.MotionEvent
 import android.view.ScaleGestureDetector
 import android.view.View
-import com.borebrian.statussaver.R
+import com.brighten.statussaver.R
 import com.bumptech.glide.Glide
 
-import com.borebrian.statussaver.utils.Utils
+import com.brighten.statussaver.utils.Utils
 import kotlinx.android.synthetic.main.activity_image_view.*
 import kotlinx.android.synthetic.main.content_image_view.*
 import org.apache.commons.io.FileUtils
 import java.io.File
-import android.app.WallpaperManager
 import android.content.Context
 
 import android.net.Uri
-import android.os.Handler
-import android.support.v7.app.AlertDialog
 import android.widget.*
-import com.borebrian.statussaver.home.HomeActivity
+import com.brighten.statussaver.home.HomeActivity
 import com.google.android.gms.ads.*
 import com.google.android.gms.ads.formats.MediaView
-import com.google.android.gms.ads.formats.NativeAdOptions
 import com.google.android.gms.ads.formats.UnifiedNativeAd
 import com.google.android.gms.ads.formats.UnifiedNativeAdView
 import com.google.android.gms.ads.reward.RewardedVideoAd
-import java.util.*
-import kotlin.concurrent.fixedRateTimer
 
 
 class ImageViewActivity : AppCompatActivity() {
@@ -62,13 +56,14 @@ class ImageViewActivity : AppCompatActivity() {
         showInterstitialAd()
 
          //ADVIEW   BANNER
-        MobileAds.initialize(this, "ca-app-pub-3940256099942544/1033173712")
+        MobileAds.initialize(this,"ca-app-pub-5747999756430076/4516345803")
 
 
 
         //NATIVE ADS
         // Initialize the Mobile Ads SDK.
         MobileAds.initialize(this, ADMOB_APP_ID)
+        /*refreshAd()*/
         
 
       /*  refresh_button.setOnClickListener { refreshAd() }
@@ -351,8 +346,8 @@ class ImageViewActivity : AppCompatActivity() {
             refresh_button.isEnabled = true*/
         }
     }
-   /* private fun refreshAd() {
-        *//*refresh_button.isEnabled = false*//*
+    private fun refreshAd() {
+
 
         val builder = AdLoader.Builder(this, ADMOB_AD_UNIT_ID)
 
@@ -363,7 +358,8 @@ class ImageViewActivity : AppCompatActivity() {
             populateUnifiedNativeAdView(unifiedNativeAd, adView)
             ad_frame.removeAllViews()
             ad_frame.addView(adView)
-        }
+        }  }
+         /*
 
      *//*   val videoOptions = VideoOptions.Builder()
                 .setStartMuted(start_muted_checkbox.isChecked)
@@ -400,7 +396,7 @@ class ImageViewActivity : AppCompatActivity() {
     fun showInterstitialAd() {
         //INTERSTITIAL
         mInterstitialAd = InterstitialAd(this);
-        mInterstitialAd.setAdUnitId("ca-app-pub-3940256099942544/1033173712")
+        mInterstitialAd.setAdUnitId("ca-app-pub-5747999756430076/4516345803")
         mInterstitialAd.loadAd(AdRequest.Builder().build());
         mInterstitialAd.setAdListener(object : AdListener() {
             override fun onAdLoaded() {
