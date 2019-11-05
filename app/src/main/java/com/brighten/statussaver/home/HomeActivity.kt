@@ -309,7 +309,7 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 showAbout()
             }
             R.id.nav_rate -> {
-               /* rateApp()*/
+                rateApp()
             }
             R.id.nav_help -> {
                 showHelp()
